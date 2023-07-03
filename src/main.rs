@@ -20,6 +20,8 @@ fn main() {
             .expect("Failed to read line");
 
         // parse() is able to pridict the type from the left
+        // parse() returns Result<T, E>
+        // can be turbofish as, guess.trim().parse::<u32>()
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
